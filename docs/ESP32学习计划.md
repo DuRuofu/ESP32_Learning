@@ -39,7 +39,7 @@
 
 ### 1.3 **Hello World 程序**：
   
-  创建一个最简单的程序，如打印 "Hello,ESP32!" 到串口。（使用官方历程）
+  创建一个最简单的程序，如打印 "Hello world!" 到串口。（使用官方历程）
   
 > 视频参考：[Hello World 程序](https://www.bilibili.com/video/BV1Rd4y1b7CE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 > 代码参考：[01.example/hello_world](https://github.com/DuRuofu/ESP32_Learning/tree/master/01.example/hello_world)
@@ -47,6 +47,27 @@
 ## 二、IDF学习
 
 > 目标：学会安装esp-idf开发环境的项目配置，包括配置菜单，可变参数宏，组件机制。
+
+### 2.1  ESP32工程结构及构建
+
+> 教程参考：[ESP32工程结构及构建](02.IDF开发入门/2.1%20ESP32工程结构及构建/ESP32工程结构及构建.md)
+> 官方参考：[ESP-IDF编程指南/API指南/构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html)
+
+### 2.2  ESP-IDF项目配置（Menuconfig）
+
+> 教程参考：[ESP-IDF项目配置](02.IDF开发入门/2.2%20ESP-IDF项目配置/ESP-IDF项目配置.md)
+> 官方参考：[ESP-IDF编程指南/API参考/项目配置](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/kconfig.html)
+> 视频参考:   [ESP-IDF自定义菜单](https://www.bilibili.com/video/BV1S44y1D7cf/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+
+### 2.3  ESP-IDF自定义组件（components）
+
+
+> 教程参考：[ESP-IDF自定义组件](02.IDF开发入门/2.3%20ESP-IDF自定义组件/ESP-IDF自定义组件.md)
+> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 视频参考:  [ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+
+### 2.4  ESP-IDF组件管理器
+
 
 
 ## 三、基础外设学习
@@ -83,13 +104,13 @@
 
 - **组件管理：** 学习ESP32的组件管理机制。
 
-> 参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 参考：
 >
-> 参考：[ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 参考：
 
 - **自定义菜单：** 学习ESP32的自定义宏菜单。
 
-> 参考:[ESP-IDF自定义菜单](https://www.bilibili.com/video/BV1S44y1D7cf/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 参考:
 
 - **温湿度传感器**：使用ESP的I2C接口实现读取DHT11温湿度传感器。
 
