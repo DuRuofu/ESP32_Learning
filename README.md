@@ -6,7 +6,7 @@
 
 ## 学习顺序:
 
-详见：[ESP32学习计划](./docs/LearningList.md)
+详见：[ESP32学习计划](./docs/ESP32学习计划.md)
 
 
 ## 其他:

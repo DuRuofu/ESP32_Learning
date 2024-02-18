@@ -5,25 +5,52 @@
 
 | 文档名称                     | 版本   | 作者    | 时间       | 备注     |
 | ---------------------------- | ------ | ------- | ---------- | -------- |
-| 项目组任务安排-ESP32学习计划 | v1.0.0 | DuRuofu | 2023-08-28 | 首次建立 |
-| 项目组任务安排-ESP32学习计划 | v1.0.1 | DuRuofu | 2023-09-2 | 补充 |
-| 项目组任务安排-ESP32学习计划 | v1.1.0 | DuRuofu | 2023-09-13 | 补充 |
+| ESP32学习计划 | v1.0.0 | DuRuofu | 2023-08-28 | 首次建立 |
+| ESP32学习计划 | v1.0.1 | DuRuofu | 2023-09-2 | 补充 |
+| ESP32学习计划 | v1.1.0 | DuRuofu | 2023-09-13 | 补充 |
 # ESP32学习计划
 
 ## 一、认知阶段
 
-- **准备开发环境**：安装 esp-idf 开发环境，并进行设置。
->基础搭建：[ESP-IDF环境搭建](https://www.bilibili.com/video/BV1E841177Tu/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
->
+> 目标：学会安装esp-idf开发环境，并使用其烧录代码，学会工具使用。
+
+### 1. 1  **准备开发环境**：
+
+安装 esp-idf 开发环境，并进行设置。
+
+参考：
+
+>基础搭建：[ESP-IDF环境搭建](https://www.bilibili.com/video/BV1E841177Tu/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)+[官方安装教程](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.1.2/esp32/get-started/index.html#get-started-how-to-get-esp-idf)
 >进阶搭建: [linux下ESP32开发环境搭建](https://duruofu.github.io/2024/01/25/4.%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3/MCU/ESP32/%E6%90%AD%E5%BB%BAesp-idf%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/#%E5%9B%9B%E3%80%81-%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E6%8C%87%E4%BB%A4) +[vscdoe配合虚拟机远程连接开发](https://duruofu.github.io/2024/01/30/4.%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3/MCU/ESP32/vscdoe+%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%BC%80%E5%8F%91ESP32/#2-2-%E6%89%8B%E8%BE%93%E5%91%BD%E4%BB%A4%E5%A4%AA%E9%BA%BB%E7%83%A6%E7%9A%84%E9%97%AE%E9%A2%98)
 
-- **点灯程序**：创建一个最简单的程序，点亮板载的LED灯。（使用官方历程）
->参考：[ESP-IDF点灯](https://www.bilibili.com/video/BV1nR4y1o7VE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+这里提供一个搭建好4.4.6以及5.1.2 版本的虚拟机：[虚拟机-网盘分享](https://www.alipan.com/s/i8yiHDk8nMN) ,提取码：3j9a
+虚拟机密码：3.1415926
 
-- **Hello World 程序**：创建一个最简单的程序，如打印 "Hello,ESP32!" 到串口。（使用官方历程）
-> 参考：[Hello World 程序](https://www.bilibili.com/video/BV1Rd4y1b7CE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+基于官方提供的示例程序，我们可以了解到最基本的工程结构：
 
-## 二、入门阶段
+>代码参考：[01.example/sample_project](https://github.com/DuRuofu/ESP32_Learning/tree/master/01.example/sample_project)
+
+### 1.2 点灯程序：
+
+创建一个最简单的程序，点亮板载的LED灯。（使用官方历程）
+
+>视频参考：[ESP-IDF点灯](https://www.bilibili.com/video/BV1nR4y1o7VE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+>代码参考：[01.example/blink](https://github.com/DuRuofu/ESP32_Learning/tree/master/01.example/blink)
+
+### 1.3 **Hello World 程序**：
+  
+  创建一个最简单的程序，如打印 "Hello,ESP32!" 到串口。（使用官方历程）
+  
+> 视频参考：[Hello World 程序](https://www.bilibili.com/video/BV1Rd4y1b7CE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 代码参考：[01.example/hello_world](https://github.com/DuRuofu/ESP32_Learning/tree/master/01.example/hello_world)
+
+## 二、IDF学习
+
+> 目标：学会安装esp-idf开发环境的项目配置，包括配置菜单，可变参数宏，组件机制。
+
+
+## 三、基础外设学习
+
 - **GPIO 控制**：使用 GPIO 控制 LED 灯的开关。
 >参考：[ESP-IDF点灯](https://www.bilibili.com/video/BV1nR4y1o7VE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
@@ -41,7 +68,6 @@
 
 >参考：[esp日志的使用](https://www.bilibili.com/video/BV1KG4y1d7Ed/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
-## 三、基础阶段
 - **Wi-Fi 连接**：使用 ESP32 连接到 Wi-Fi 网络，并获取到实时时间。
 
 > 参考：[WIFI基础篇](https://www.bilibili.com/video/BV16G4y1g72w/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
@@ -71,7 +97,7 @@
 
 
 
-## 三、进阶阶段
+## 四、ESP32存储器学习
 
 - **FreeRTOS**：使用ESP32创建多线程任务。
 - **TCP/UDP通信**：基于wifi完成与上位机的TCP或者UDP通信。
@@ -79,6 +105,16 @@
 - **LVGL**：在ESP32上移植LVGL，实现图形化界面。
 - **OTA 升级**：学习 ESP32 的 OTA（Over The Air）升级机制，实现通过 Wi-Fi 远程更新程序。
 - **Web 服务器**：使用 ESP32 实现 Web 服务器，可以在浏览器上访问并控制 ESP32 的各种功能。
+
+
+## 五、ESP32 WFI学习
+
+
+## 六、ESP32 蓝牙学习
+
+
+## 七、ESP32 系统API学习
+
 # 参考链接
 
 - 孤独的二进制：https://space.bilibili.com/1375767826

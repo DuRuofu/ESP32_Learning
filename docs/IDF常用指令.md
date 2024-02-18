@@ -4,6 +4,8 @@
 - 运行idfV5.1.2环境：`get_idf_v5`
 
 ESP-IDF:
+- 创建工程：`idf.py create-project {filename}` 
+- 新建组件`idf.py -C components create-component {componentName}`
 - 清除之前的编译：` idf.py fullclean`           
 - 编译:  `idf.py build`          
 - 向串口烧录固件: `idf.py  -p  {PORT}  flash`                
