@@ -1,12 +1,5 @@
-/* Blink Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 #include <stdio.h>
+#include "led_blink.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
@@ -14,20 +7,20 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
-static const char *TAG = "example";
+
+static const char *TAG = "led_blink";
 
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
 #define BLINK_GPIO CONFIG_BLINK_GPIO
 
-static uint8_t s_led_state = 0;
 
 #ifdef CONFIG_BLINK_LED_RMT
 
-static led_strip_handle_t led_strip;
+led_strip_handle_t led_strip;
 
-static void blink_led(void)
+void blink_led(void)
 {
     /* If the addressable LED is enabled */
     if (s_led_state) {
@@ -41,7 +34,7 @@ static void blink_led(void)
     }
 }
 
-static void configure_led(void)
+void configure_led(void)
 {
     ESP_LOGI(TAG, "Example configured to blink addressable LED!");
     /* LED strip initialization with the GPIO and pixels number*/
@@ -59,13 +52,13 @@ static void configure_led(void)
 
 #elif CONFIG_BLINK_LED_GPIO
 
-static void blink_led(void)
+void blink_led(int s_led_state)
 {
     /* Set the GPIO level according to the state (LOW or HIGH)*/
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
 
-static void configure_led(void)
+void configure_led(void)
 {
     ESP_LOGI(TAG, "Example configured to blink GPIO LED!");
     gpio_reset_pin(BLINK_GPIO);
@@ -74,18 +67,3 @@ static void configure_led(void)
 }
 
 #endif
-
-void app_main(void)
-{
-
-    /* Configure the peripheral according to the LED type */
-    configure_led();
-
-    while (1) {
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-        blink_led();
-        /* Toggle the LED state */
-        s_led_state = !s_led_state;
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
-    }
-}
