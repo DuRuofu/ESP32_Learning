@@ -8,11 +8,11 @@ ESP-IDF:
 - 新建组件`idf.py -C components create-component {componentName}`
 - 清除之前的编译：` idf.py fullclean`           
 - 编译:  `idf.py build`          
-- 向串口烧录固件: `idf.py  -p  {PORT}  flash`                
-- 打开串口监视器:`idf.py  -p  {PORT}  monitor`   
+- 向串口烧录固件: `idf.py  -p  /dev/ttyUSB0  flash`    （`/dev/ttyUSB0`  为目标串口参数，根据实际填写）            
+- 打开串口监视器:`idf.py  -p  /dev/ttyUSB0  monitor`   （`/dev/ttyUSB0`  为目标串口参数，根据实际填写）   
 -  配置菜单 :`idf.py  menuconfig  `             
 - 选择芯片型号：` idf.py set-target esp32 `  不输入参数的话，会列出所有可用型号
-- 一次性执行构建、烧录和监视过程：`idf.py -p {PORT} flash monitor`
+- 一次性执行构建、烧录和监视过程：`idf.py -p /dev/ttyUSB0 flash monitor`  （`/dev/ttyUSB0`  为目标串口参数，根据实际填写）   
 
 其他:
 

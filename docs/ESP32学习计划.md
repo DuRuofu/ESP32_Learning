@@ -50,19 +50,19 @@
 
 ### 2.1  ESP32工程结构及构建
 
-> 教程参考：[ESP32工程结构及构建](02.IDF开发入门/2.1%20ESP32工程结构及构建/ESP32工程结构及构建.md)
+> 教程参考：[ESP32工程结构及构建](02.IDF开发入门/2.1-ESP32工程结构及构建/ESP32工程结构及构建.md)
 > 官方参考：[ESP-IDF编程指南/API指南/构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html)
 
 ### 2.2  ESP-IDF项目配置（Menuconfig）
 
-> 教程参考：[ESP-IDF项目配置](02.IDF开发入门/2.2%20ESP-IDF项目配置/ESP-IDF项目配置.md)
+> 教程参考：[ESP-IDF项目配置](02.IDF开发入门/2.2-ESP-IDF项目配置/ESP-IDF项目配置.md)
 > 官方参考：[ESP-IDF编程指南/API参考/项目配置](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/kconfig.html)
 > 视频参考:   [ESP-IDF自定义菜单](https://www.bilibili.com/video/BV1S44y1D7cf/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
 ### 2.3  ESP-IDF自定义组件（components）
 
 
-> 教程参考：[ESP-IDF自定义组件](02.IDF开发入门/2.3%20ESP-IDF自定义组件/ESP-IDF自定义组件.md)
+> 教程参考：[ESP-IDF自定义组件](02.IDF开发入门/2.3-ESP-IDF自定义组件/ESP-IDF自定义组件.md)
 > 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
 > 视频参考:  [ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
