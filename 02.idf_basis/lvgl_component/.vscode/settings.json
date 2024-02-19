@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"sdkconfig.h": "c",
+		"lvgl.h": "c"
+	}
+}
