@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"led_strip.h": "c",
+		"led_blink.h": "c",
+		"stdio.h": "c",
+		"button_gpio.h": "c"
+	},
+	"C_Cpp.errorSquiggles": "disabled"
+}
