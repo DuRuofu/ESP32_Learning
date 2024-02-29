@@ -68,6 +68,9 @@
 
 ### 2.4  ESP-IDF组件管理器
 
+> 教程参考：[ESP-IDF组件管理器](02.IDF开发入门/2.4-ESP-IDF组件管理器/ESP-IDF组件管理器.md)
+> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 视频参考:  [ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
 
 ## 三、基础外设学习
@@ -135,6 +138,11 @@
 
 
 ## 七、ESP32 系统API学习
+
+
+## 八、GUI学习
+
+
 
 # 参考链接
 
