@@ -14,6 +14,7 @@ ESP-IDF:
 - 选择芯片型号：` idf.py set-target esp32 `  不输入参数的话，会列出所有可用型号
 - 一次性执行构建、烧录和监视过程：`idf.py -p /dev/ttyUSB0 flash monitor`  （`/dev/ttyUSB0`  为目标串口参数，根据实际填写）   
 
+- 获取ADC基准值：`espefuse.py -p /dev/ttyUSB0 adc_info`
 其他:
 
 - 查询可用串口:`ls /dev/ttyUSB*`

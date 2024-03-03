@@ -80,14 +80,47 @@
 #### 3.1.1 GPIO输出/输出
 
 > 教程参考：[ESP32外设-GPIO入门](03.ESP32基础外设入门/3.1-ESP32外设-GPIO入门/ESP32外设-GPIO入门.md)
-> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 官方参考：[GPIO & RTC GPIO](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/gpio.html)
 > 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/gpio
 
 #### 3.1.2 GPIO中断
 
 > 教程参考：[ESP32外设-GPIO入门](03.ESP32基础外设入门/3.1-ESP32外设-GPIO入门/ESP32外设-GPIO入门.md)
-> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 官方参考：[GPIO & RTC GPIO](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/gpio.html)
 > 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/gpio_exit
+
+### 3.2 UART
+
+> 教程参考：[ESP32外设-UART入门](03.ESP32基础外设入门/3.2-ESP32外设-UART入门/ESP32外设-UART入门.md)
+> 官方参考：[外设API->通用异步接收器/发送器 (UART)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/uart.html#uart-api-setting-communication-parameters)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/uart
+
+
+### 3.3 硬件定时器
+
+
+> 教程参考：
+> 官方参考：
+> 代码参考：
+
+
+### 3.4 ADC
+
+#### 3.4.1 ADC单次转换
+
+> 教程参考：[ESP32外设-ADC入门](03.ESP32基础外设入门/3.4-ESP32外设-ADC入门/ESP32外设-ADC入门.md)
+> 官方参考：[模数转换器 (ADC-单次)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/adc_oneshot.html)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/adc_oneshot
+
+#### 3.4.2 ADC连续转换
+
+> 教程参考：[ESP32外设-ADC入门](03.ESP32基础外设入门/3.4-ESP32外设-ADC入门/ESP32外设-ADC入门.md)
+> 官方参考：[模数转换器 (ADC-连续)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/adc_continuous.html#)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/adc_continuous
+
+
+
+
 
 
 
@@ -155,7 +188,22 @@
 ## 六、ESP32 蓝牙学习
 
 
-## 七、ESP32 系统API学习
+## 七、ESP32其他系统API学习
+
+
+### 7.1 软件定时器
+
+> 教程参考：
+> 官方参考：[ESP 定时器](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/system/esp_timer.html)
+> 代码参考： 
+
+
+### 3.1 控制台终端
+
+> 教程参考：
+> 官方参考：[控制台终端](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/system/console.html)
+> 代码参考： 
+
 
 
 ## 八、GUI学习
