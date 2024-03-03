@@ -17,3 +17,4 @@ ESP-IDF:
 其他:
 
 - 查询可用串口:`ls /dev/ttyUSB*`
+- 添加串口权限(需重启)：`sudo usermod -aG dialout username`

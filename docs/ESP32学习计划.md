@@ -70,16 +70,34 @@
 
 > 教程参考：[ESP-IDF组件管理器](02.IDF开发入门/2.4-ESP-IDF组件管理器/ESP-IDF组件管理器.md)
 > 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
-> 视频参考:  [ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 视频参考:  [ESP32-IDF中cmake文件管理](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
 
 
 ## 三、基础外设学习
 
-- **GPIO 控制**：使用 GPIO 控制 LED 灯的开关。
->参考：[ESP-IDF点灯](https://www.bilibili.com/video/BV1nR4y1o7VE/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+### 3.1 GPIO
 
-- **按钮输入**：使用 GPIO 监测按钮输入，使用按钮控制LED灯的开关。
->参考：[按键读取](https://blog.csdn.net/qq_24550925/article/details/85335516)
+#### 3.1.1 GPIO输出/输出
+
+> 教程参考：[ESP32外设-GPIO入门](03.ESP32基础外设入门/3.1-ESP32外设-GPIO入门/ESP32外设-GPIO入门.md)
+> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/gpio
+
+#### 3.1.2 GPIO中断
+
+> 教程参考：[ESP32外设-GPIO入门](03.ESP32基础外设入门/3.1-ESP32外设-GPIO入门/ESP32外设-GPIO入门.md)
+> 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/gpio_exit
+
+
+
+
+
+
+
+
+
+
 
 - **NVS：** 学习ESP32的NVS非易失性存储，并使用NVS保存开发板LED状态，使得系统复位后LED状态与复位前一致。
 >参考:[NVS非易失性存储](https://www.bilibili.com/video/BV1nW4y1g7c5/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
