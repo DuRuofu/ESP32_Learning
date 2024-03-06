@@ -95,14 +95,12 @@
 > 官方参考：[外设API->通用异步接收器/发送器 (UART)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/uart.html#uart-api-setting-communication-parameters)
 > 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/uart
 
-
 ### 3.3 硬件定时器
 
 
-> 教程参考：
-> 官方参考：
-> 代码参考：
-
+> 教程参考：[ESP32外设-硬件定时器入门](03.ESP32基础外设入门/3.3-ESP32外设-硬件定时器入门/ESP32外设-硬件定时器入门.md)
+> 官方参考：[通用定时器](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/gptimer.html#id26)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/gptimer
 
 ### 3.4 ADC
 
@@ -118,71 +116,96 @@
 > 官方参考：[模数转换器 (ADC-连续)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/adc_continuous.html#)
 > 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/adc_continuous
 
+### 3.5 DAC
+
+> 教程参考：[ESP32外设-DAC入门](03.ESP32基础外设入门/3.5-ESP32外设-DAC入门/ESP32外设-DAC入门.md)
+> 官方参考：[模数转换器 (ADC-连续)](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/adc_continuous.html#)
+> 代码参考1： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/dac_oneshot
+> 代码参考2： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/dac_cosine
 
 
+### 3.6 LED PWM 
+
+> 教程参考：[ESP32外设-LEDPWM入门](03.ESP32基础外设入门/3.6-ESP32外设-LEDPWM入门/ESP32外设-LEDPWM入门.md)
+> 官方参考：[LED PWM 控制器](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/peripherals/ledc.html#led-pwm "永久链接至标题")
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/led_pwm
 
 
+### 3.7 I2C
 
+> 教程参考：
+> 官方参考：
+> 代码参考： 
 
-
-
-
-
-
-
-
-
-- **NVS：** 学习ESP32的NVS非易失性存储，并使用NVS保存开发板LED状态，使得系统复位后LED状态与复位前一致。
->参考:[NVS非易失性存储](https://www.bilibili.com/video/BV1nW4y1g7c5/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-
-- **使用 ADC**：学习ESP32的 ADC 的基本原理和使用方法，并且使用ADC读取一节干电池的电压，并且发送到上位机串口。
-
->参考:[ESP32ADC的使用](https://blog.csdn.net/m0_50064262/article/details/118817032)
-
-- **日志模块**：自行学习ESP32的gebug日志模块，输出不同级别的日志。（极易）
-
->参考：[esp日志的使用](https://www.bilibili.com/video/BV1KG4y1d7Ed/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-
-- **Wi-Fi 连接**：使用 ESP32 连接到 Wi-Fi 网络，并获取到实时时间。
-
-> 参考：[WIFI基础篇](https://www.bilibili.com/video/BV16G4y1g72w/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
->
-> 参考：[ESP32 WIFI教程一: 开篇介绍](https://www.bilibili.com/video/BV1Dd4y1B7RT/?spm_id_from=333.337.search-card.all.click&vd_source=ef5a0ab0106372751602034cdd9ab98e)
->
-> 参考:[ESP32-IDF下WIFI使用以及NTP时间获取](https://www.bilibili.com/video/BV1Ug411s7Ue/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-
-- **MQTT 通信**：实现 ESP32 与 MQTT 服务器的通信。（应该在进阶，但是需求度较高，故放在基础里。）
-
-> 参考：[ESP32 WIFI教程二十四: MQTT简介](https://www.bilibili.com/video/BV1gG411u7DG/?spm_id_from=333.788&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-> 参考：[零基础入门学用物联网 – MQTT基础篇](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/iot-tuttorial/mqtt-tutorial/)
-
-- **组件管理：** 学习ESP32的组件管理机制。
-
-> 参考：
->
-> 参考：
-
-- **自定义菜单：** 学习ESP32的自定义宏菜单。
-
-> 参考:
-
-- **温湿度传感器**：使用ESP的I2C接口实现读取DHT11温湿度传感器。
-
-> 参考：[ESP官方外设驱动组件库](https://github.com/UncleRus/esp-idf-lib)
-
+### 3.8 SPI
+> 教程参考：
+> 官方参考：
+> 代码参考： 
 
 
 ## 四、ESP32存储器学习
 
-- **FreeRTOS**：使用ESP32创建多线程任务。
-- **TCP/UDP通信**：基于wifi完成与上位机的TCP或者UDP通信。
-- **蓝牙通信**：使用 ESP32 进行蓝牙通信，完成基本的数据传输和控制功能。
-- **LVGL**：在ESP32上移植LVGL，实现图形化界面。
-- **OTA 升级**：学习 ESP32 的 OTA（Over The Air）升级机制，实现通过 Wi-Fi 远程更新程序。
-- **Web 服务器**：使用 ESP32 实现 Web 服务器，可以在浏览器上访问并控制 ESP32 的各种功能。
+### 4.1 分区表
 
+> 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
+> 官方参考：[分区表](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/partition-tables.html)
+> 代码参考： 
+
+### 4.2 非易失性存储 (NVS)
+
+> 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
+> 官方参考：[分区表](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/partition-tables.html)
+> 代码参考： 
+### 4.3 SPIFFS 文件系统
+
+> 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
+> 官方参考：
+> 代码参考： 
+### 4.4  FAT 文件系统
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
 
 ## 五、ESP32 WFI学习
+
+### 5.1  WIFI入门
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.2 TCP协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.3 UDP协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.4 HTTP协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.5 webSocket协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.6 MQTT协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+### 5.7 ESP-NOW协议
+
+> 教程参考：
+> 官方参考：
+> 代码参考： 
+
+### 5.8 WIFI配网
 
 
 ## 六、ESP32 蓝牙学习
@@ -193,20 +216,45 @@
 
 ### 7.1 软件定时器
 
-> 教程参考：
+> 教程参考：[ESP32系统API-软件定时器](07.ESP32系统API入门/7.1-软件定时器/ESP32系统API-软件定时器.md)
 > 官方参考：[ESP 定时器](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/system/esp_timer.html)
-> 代码参考： 
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/07.system/esp_timer
 
 
-### 3.1 控制台终端
+### 7.2 控制台终端
 
 > 教程参考：
 > 官方参考：[控制台终端](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/system/console.html)
 > 代码参考： 
 
 
+## 九、ESP32FreeRTOS
+
+
+
 
 ## 八、GUI学习
+
+
+- **FreeRTOS**：使用ESP32创建多线程任务。
+- **TCP/UDP通信**：基于wifi完成与上位机的TCP或者UDP通信。
+- **蓝牙通信**：使用 ESP32 进行蓝牙通信，完成基本的数据传输和控制功能。
+- **LVGL**：在ESP32上移植LVGL，实现图形化界面。
+- **OTA 升级**：学习 ESP32 的 OTA（Over The Air）升级机制，实现通过 Wi-Fi 远程更新程序。
+- **Web 服务器**：使用 ESP32 实现 Web 服务器，可以在浏览器上访问并控制 ESP32 的各种功能。
+
+
+
+
+
+
+
+## 十、其他外部硬件demo
+
+
+
+
+
 
 
 
