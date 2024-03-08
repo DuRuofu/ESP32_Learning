@@ -3,6 +3,9 @@
 		"array": "c",
 		"string": "c",
 		"string_view": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"sdkconfig.h": "c",
+		"lv_demo_widgets.h": "c",
+		"lv_demo_music.h": "c"
 	}
 }

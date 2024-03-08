@@ -9,7 +9,8 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "/home/duruofu/桌面/ESP32_Learning/08.gui/lvgl_component/build/compile_commands.json"
         }
     ],
     "version": 4
