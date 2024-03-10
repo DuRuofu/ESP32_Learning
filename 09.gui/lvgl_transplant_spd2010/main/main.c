@@ -228,6 +228,7 @@ static void example_lvgl_port_task(void *arg)
     ESP_LOGI(TAG, "Starting LVGL task");
     uint32_t task_delay_ms = EXAMPLE_LVGL_TASK_MAX_DELAY_MS;
     while (1) {
+         ESP_LOGI(TAG, "LVGL task");
         // Lock the mutex due to the LVGL APIs are not thread-safe
         if (example_lvgl_lock(-1)) {
             task_delay_ms = lv_timer_handler();

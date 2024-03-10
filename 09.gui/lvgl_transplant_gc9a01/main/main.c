@@ -221,6 +221,10 @@ void app_main(void)
 	disp_drv.user_data = panel_handle; 		// 设置用户数据
 	lv_disp_t *disp = lv_disp_drv_register(&disp_drv); 	// 注册显示驱动
 
+	// 配置输入设备
+	ESP_LOGI(TAG, "Initialize LVGL input device");
+	// lv_indev_drv_t indev_drv;
+
 
 	// 创建定时器
 	ESP_LOGI(TAG, "Install LVGL tick timer");
