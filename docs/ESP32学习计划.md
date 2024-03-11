@@ -1,4 +1,4 @@
-### 说明：
+ ### 说明：
 
 1. 本文档由DuRuofu撰写，由DuRuofu负责解释及执行。
 ### 修订历史：
@@ -58,20 +58,21 @@
 > 教程参考：[ESP-IDF项目配置](02.IDF开发入门/2.2-ESP-IDF项目配置/ESP-IDF项目配置.md)
 > 官方参考：[ESP-IDF编程指南/API参考/项目配置](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-reference/kconfig.html)
 > 视频参考:   [ESP-IDF自定义菜单](https://www.bilibili.com/video/BV1S44y1D7cf/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 代码参考:  https://github.com/DuRuofu/ESP32_Learning/tree/master/02.idf_basis/blink_menuconfig
 
 ### 2.3  ESP-IDF自定义组件（components）
 
 
 > 教程参考：[ESP-IDF自定义组件](02.IDF开发入门/2.3-ESP-IDF自定义组件/ESP-IDF自定义组件.md)
 > 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
-> 视频参考:  [ESP32-IDF中cmake文件管理(](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-
+> 视频参考:  [ESP32-IDF中cmake文件管理](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
+> 代码参考:  https://github.com/DuRuofu/ESP32_Learning/tree/master/02.idf_basis/blink_component
 ### 2.4  ESP-IDF组件管理器
 
 > 教程参考：[ESP-IDF组件管理器](02.IDF开发入门/2.4-ESP-IDF组件管理器/ESP-IDF组件管理器.md)
 > 官方参考：[API指南->构建系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/build-system.html#component-configuration)
 > 视频参考:  [ESP32-IDF中cmake文件管理](https://www.bilibili.com/video/BV1w14y1s7oy/?spm_id_from=333.999.0.0&vd_source=ef5a0ab0106372751602034cdd9ab98e)
-
+> 代码参考:  https://github.com/DuRuofu/ESP32_Learning/tree/master/02.idf_basis/button_component
 
 ## 三、基础外设学习
 
@@ -133,11 +134,12 @@
 
 ### 3.7 I2C
 
-> 教程参考：
-> 官方参考：
-> 代码参考： 
+> 教程参考：[ESP32外设-I2C入门](03.ESP32基础外设入门/3.7-ESP32外设-I2C入门/ESP32外设-I2C入门.md)
+> 官方参考：[I2C 驱动程序](https://docs.espressif.com/projects/esp-idf/zh_CN/release-v5.1/esp32/api-reference/peripherals/i2c.html)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/03.peripheral/i2c_bh1750
 
 ### 3.8 SPI
+
 > 教程参考：
 > 官方参考：
 > 代码参考： 
@@ -149,23 +151,27 @@
 
 > 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
 > 官方参考：[分区表](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/partition-tables.html)
-> 代码参考： 
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/04.storage/partition
 
 ### 4.2 非易失性存储 (NVS)
 
-> 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
+> 教程参考：[ESP32存储-非易失性存储 (NVS)入门](04.ESP32存储器入门/4.2-ESP32存储-非易失性存储%20(NVS)/ESP32存储-非易失性存储%20(NVS)入门.md)
 > 官方参考：[分区表](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/api-guides/partition-tables.html)
-> 代码参考： 
-### 4.3 SPIFFS 文件系统
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/04.storage/nvs
 
-> 教程参考：[ESP32存储-分区表入门](04.ESP32存储器入门/4.1-ESP32存储-分区表入门/ESP32存储-分区表入门.md)
-> 官方参考：
-> 代码参考： 
-### 4.4  FAT 文件系统
+### 4.3  FAT文件系统
 
-> 教程参考：
-> 官方参考：
-> 代码参考： 
+> 教程参考：[ESP32存储-VFS虚拟文件系统入门](04.ESP32存储器入门/4.3-ESP32存储-VFS文件系统/ESP32存储-VFS虚拟文件系统入门.md)
+> 官方参考：[FAT 文件系统](https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32/api-reference/storage/fatfs.html)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/04.storage/flash_fatfs
+
+
+### 4.4 SPIFFS 文件系统
+
+> 教程参考：[ESP32存储-SPIFFS文件系统](04.ESP32存储器入门/4.4-ESP32存储-SPIFFS文件系统入门/ESP32存储-SPIFFS文件系统.md)
+> 官方参考：[SPIFFS 文件系统](https://docs.espressif.com/projects/esp-idf/zh_CN/stable/esp32/api-reference/storage/spiffs.html)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/04.storage/flash_spiffs
+
 
 ## 五、ESP32 WFI学习
 
@@ -213,7 +219,6 @@
 
 ## 七、ESP32其他系统API学习
 
-
 ### 7.1 软件定时器
 
 > 教程参考：[ESP32系统API-软件定时器](07.ESP32系统API入门/7.1-软件定时器/ESP32系统API-软件定时器.md)
@@ -228,25 +233,48 @@
 > 代码参考： 
 
 
-## 九、ESP32FreeRTOS
+## 八、ESP32FreeRTOS
 
 
+### 8.1 FreeRTOS基础
 
 
-## 八、GUI学习
+### 8.2 ESP32中FreeRTOS启动过程
 
 
-- **FreeRTOS**：使用ESP32创建多线程任务。
-- **TCP/UDP通信**：基于wifi完成与上位机的TCP或者UDP通信。
-- **蓝牙通信**：使用 ESP32 进行蓝牙通信，完成基本的数据传输和控制功能。
-- **LVGL**：在ESP32上移植LVGL，实现图形化界面。
-- **OTA 升级**：学习 ESP32 的 OTA（Over The Air）升级机制，实现通过 Wi-Fi 远程更新程序。
-- **Web 服务器**：使用 ESP32 实现 Web 服务器，可以在浏览器上访问并控制 ESP32 的各种功能。
+### 8.3 任务（task）
 
 
+### 8.4 队列传递数据
 
 
+### 8.5 定时器&信号量
 
+
+### 8.6 事件组
+
+
+### 8.7 任务通知
+
+
+### 8.8 流数据/消息
+
+
+## 九、GUI学习
+
+
+### 9.1 LVGL的移植
+
+#### 9.1.1 以GC9A01为例（SPI）
+
+> 教程参考：[基于ESP-IDF官方组件移植LVGL(GC9A01无触摸)](08.ESP32GUI入门/8.1-使用组件管理器移植LVGL/基于ESP-IDF官方组件移植LVGL(以GC9A01为例)/基于ESP-IDF官方组件移植LVGL(GC9A01无触摸).md)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/08.gui/lvgl_component
+
+
+#### 9.1.2 以SPD2010(带触摸)为例（QSPI +I2C）
+
+> 教程参考：[基于ESP-IDF官方组件移植LVGL(SPD2010带触摸)](08.ESP32GUI入门/8.1-使用组件管理器移植LVGL/基于ESP-IDF官方组件移植LVGL(SPD2010带触摸)/基于ESP-IDF官方组件移植LVGL(SPD2010带触摸).md)
+> 代码参考： https://github.com/DuRuofu/ESP32_Learning/tree/master/08.gui/lvgl_component
 
 
 ## 十、其他外部硬件demo

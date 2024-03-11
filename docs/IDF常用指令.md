@@ -4,7 +4,7 @@
 - 运行idfV5.1.2环境：`get_idf_v5`
 
 ESP-IDF:
-- 创建工程：`idf.py create-project {filename}` 
+- 创建工程：`idf.py create-project main` 
 - 新建组件`idf.py -C components create-component {componentName}`
 - 清除之前的编译：` idf.py fullclean`           
 - 编译:  `idf.py build`          
@@ -19,3 +19,10 @@ ESP-IDF:
 
 - 查询可用串口:`ls /dev/ttyUSB*`
 - 添加串口权限(需重启)：`sudo usermod -aG dialout username`
+
+
+win下添加环境：
+
+`C:\Espressif\frameworks\esp-idf-v5.2.1\export.bat`
+
+`D:\Espressif\frameworks\esp-idf-v5.2.1\export.bat`
