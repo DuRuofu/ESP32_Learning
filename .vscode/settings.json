@@ -6,6 +6,7 @@
 		"stdio.h": "c",
 		"sdkconfig.h": "c",
 		"lv_demo_widgets.h": "c",
-		"lv_demo_music.h": "c"
+		"lv_demo_music.h": "c",
+		"led_blink.h": "c"
 	}
 }
