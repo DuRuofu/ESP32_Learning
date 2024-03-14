@@ -1,4 +1,4 @@
-#include <string.h>
+#include <stng.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 #include "esp_wifi.h"
@@ -8,6 +8,17 @@
 
 #define ESP_WIFI_AP_SSID "DuRuofu_ESP32"
 #define ESP_WIFI_AP_PASSWD "3.1415926"
+
+void WIFI_CallBack(void *event_handler_arg,esp_event_base_t event_base,int32_t event_id,void *event_data)
+{
+	if(event_base == IP_EVENT && event_id == IP_EVENT_AP_STAIPASSIGNED)
+	{
+		// 解析数据
+		ip_event_got_ip_t *event_info = (ip_event_got_ip_t *)event_data;
+		ESP_LOGI("WIFI_AP", "Got IP:" IPSTR, IP2STR(&event_info->ip_info.ip));
+	}
+}
+
 void app_main(void)
 {
 	//----------------准备阶段-------------------
@@ -26,6 +37,7 @@ void app_main(void)
 
 	// 初始化默认事件循环
 	ESP_ERROR_CHECK(esp_event_loop_create_default());
+	esp_event_handler_instance_register(IP_EVENT, IP_EVENT_AP_STAIPASSIGNED, WIFI_CallBack, NULL, NULL);
 
 	// *esp_netif_ap 可以用来修改AP设置
 	esp_netif_t *esp_netif_ap = esp_netif_create_default_wifi_ap();
@@ -52,6 +64,7 @@ void app_main(void)
 	};
 	ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &wifi_ap_config));
 
+	//---------------启动阶段--------------------
 	/* Start WiFi */
 	ESP_ERROR_CHECK(esp_wifi_start());
 }
