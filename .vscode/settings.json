@@ -7,6 +7,9 @@
 		"sdkconfig.h": "c",
 		"lv_demo_widgets.h": "c",
 		"lv_demo_music.h": "c",
-		"led_blink.h": "c"
+		"led_blink.h": "c",
+		"esp_wifi.h": "c",
+		"esp_wifi_types.h": "c",
+		"esp_event.h": "c"
 	}
 }
