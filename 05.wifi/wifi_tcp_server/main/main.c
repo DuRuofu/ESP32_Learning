@@ -50,6 +50,7 @@ void WIFI_CallBack(void *event_handler_arg, esp_event_base_t event_base, int32_t
 	}
 }
 
+// 数据接收与回传
 static void do_retransmit(const int sock)
 {
 	int len;
@@ -154,6 +155,7 @@ static void tcp_server_task(void *pvParameters)
 		setsockopt(sock, IPPROTO_TCP, TCP_KEEPIDLE, &keepIdle, sizeof(int));
 		setsockopt(sock, IPPROTO_TCP, TCP_KEEPINTVL, &keepInterval, sizeof(int));
 		setsockopt(sock, IPPROTO_TCP, TCP_KEEPCNT, &keepCount, sizeof(int));
+		
 		// Convert ip address to string
 		if (source_addr.ss_family == PF_INET)
 		{
