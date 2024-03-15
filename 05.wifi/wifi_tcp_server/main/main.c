@@ -8,10 +8,14 @@
 #include "nvs_flash.h"
 #include "esp_mac.h"
 #include "esp_netif.h"
-
+#include <sys/socket.h>
 
 #define ESP_WIFI_STA_SSID "duruofu_win10"
 #define ESP_WIFI_STA_PASSWD "1234567890"
+#define TCP_SREVER_ADDR "192.168.137.1"
+#define TCP_SREVER_PORT 8080
+
+static const char *TAG = "main";
 
 void WIFI_CallBack(void *event_handler_arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
 {
@@ -32,7 +36,8 @@ void WIFI_CallBack(void *event_handler_arg, esp_event_base_t event_base, int32_t
 			vTaskDelay(1000 / portTICK_PERIOD_MS);
 			ESP_ERROR_CHECK(esp_wifi_connect());
 		}
-		else{
+		else
+		{
 			ESP_LOGI("WIFI_EVENT", "WIFI_EVENT_STA_DISCONNECTED 10 times");
 		}
 	}
@@ -45,22 +50,81 @@ void WIFI_CallBack(void *event_handler_arg, esp_event_base_t event_base, int32_t
 	}
 }
 
-void app_main(void)
+static void tcp_client_task(void *pvParameters)
 {
-	//----------------准备阶段-------------------
-	// Initialize NVS
-	esp_err_t ret = nvs_flash_init();
-	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
-	{
-		ESP_ERROR_CHECK(nvs_flash_erase());
-		ret = nvs_flash_init();
-	}
-	ESP_ERROR_CHECK(ret);
 
-	//----------------初始化阶段-------------------
+
+	// 等待wifi连接成功(暂时这样处理)
+	vTaskDelay(5000 / portTICK_PERIOD_MS);
+
+	ESP_LOGI("tcp_client_task", "tcp_client_task start");
+
+	// 创建socket
+	int sock = socket(AF_INET, SOCK_STREAM, 0);
+	if (sock < 0) // 创建失败返回-1
+	{
+		ESP_LOGE(TAG, "Unable to create socket: errno %d", errno);
+		return;
+	}
+
+	// 设置服务器(IPV4)
+	struct sockaddr_in server_config;
+	server_config.sin_addr.s_addr = inet_addr(TCP_SREVER_ADDR);
+	server_config.sin_family = AF_INET;
+	server_config.sin_port = htons(TCP_SREVER_PORT); // 宏htons 用于将主机的无符号短整型数据转换成网络字节顺序(小端转大端)
+
+	// 连接服务器
+	int err = connect(sock, (struct sockaddr *)&server_config, sizeof(server_config));
+	if (err != 0)
+	{
+		ESP_LOGE(TAG, "Socket unable to connect: errno %d", errno);
+		return;
+	}
+
+	// 发送数据
+	const char *data = "Hello World!";
+	int len = send(sock, data, strlen(data), 0);
+	if (len < 0)
+	{
+		ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+		return;
+	}
+
+	char rx_buffer[1024];
+	// 接收数据,并发回
+	while(1)
+	{
+		int len = recv(sock, rx_buffer, sizeof(rx_buffer), 0);
+		// Error occurred during receiving
+		if (len < 0)
+		{
+			ESP_LOGE(TAG, "recv failed: errno %d", errno);
+			break;
+		}
+		// Data received
+		else
+		{
+			ESP_LOGI(TAG, "Received %d bytes from %s:", len, TCP_SREVER_ADDR);
+			ESP_LOGI(TAG, "%.*s", len, rx_buffer);
+
+			// 发送数据
+			int len_end = send(sock, rx_buffer, len, 0);
+			if (len_end < 0)
+			{
+				ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+				break;
+			}
+		}
+	}
+
+	vTaskDelete(NULL);
+}
+
+// wifi初始化
+static void wifi_sta_init(void)
+{
 	ESP_ERROR_CHECK(esp_netif_init());
 
-	ESP_ERROR_CHECK(esp_event_loop_create_default());
 	// 注册事件(wifi启动成功)
 	ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT, WIFI_EVENT_STA_START, WIFI_CallBack, NULL, NULL));
 	// 注册事件(wifi连接失败)
@@ -97,4 +161,25 @@ void app_main(void)
 	//----------------配置省电模式-------------------
 	// 不省电(数据传输会更快)
 	ESP_ERROR_CHECK(esp_wifi_set_ps(WIFI_PS_NONE));
+}
+
+void app_main(void)
+{
+	// Initialize NVS
+	esp_err_t ret = nvs_flash_init();
+	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+	{
+		ESP_ERROR_CHECK(nvs_flash_erase());
+		ret = nvs_flash_init();
+	}
+	ESP_ERROR_CHECK(ret);
+
+	// 创建默认事件循环
+	ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+	// 配置启动WIFI
+	wifi_sta_init();
+
+	// 创建TCP客户端任务
+	xTaskCreate(tcp_client_task, "tcp_client_task", 4096, NULL, 5, NULL);
 }
