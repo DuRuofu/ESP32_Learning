@@ -57,6 +57,7 @@ void app_main(void)
 	/*Initialize WiFi */
 	wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
 	// WIFI_INIT_CONFIG_DEFAULT 是一个默认配置的宏
+	// 初始化WIFI设备( 为 WiFi 驱动初始化 WiFi 分配资源，如 WiFi 控制结构、RX/TX 缓冲区、WiFi NVS 结构等，这个 WiFi 也启动 WiFi 任务。必须先调用此API，然后才能调用所有其他WiFi API)
 	ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
 	//---------------配置阶段--------------------
