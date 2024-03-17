@@ -9,13 +9,16 @@
 #include "esp_mac.h"
 #include "esp_netif.h"
 #include <sys/socket.h>
+#include "lwip/err.h"
+#include "lwip/sys.h"
+#include <lwip/netdb.h>
+
 
 // 要连接的WIFI
 #define ESP_WIFI_STA_SSID "duruofu_win10"
 #define ESP_WIFI_STA_PASSWD "1234567890"
 
-// 目标服务器地址端口
-#define UDP_SREVER_ADDR "255.255.255.255"
+// 服务器端口
 #define UDP_SREVER_PORT 8080
 
 static const char *TAG = "main";
@@ -54,11 +57,11 @@ void WIFI_CallBack(void *event_handler_arg, esp_event_base_t event_base, int32_t
 }
 
 // udp客户端
-static void udp_client_task(void *pvParameters)
+static void udp_server_task(void *pvParameters)
 {
 	// 等待wifi连接成功(暂时这样处理)
 	vTaskDelay(5000 / portTICK_PERIOD_MS);
-	ESP_LOGI("udp_client_task", "udp_client_task start");
+	ESP_LOGI("udp_server_task", "udp_server_task start");
 
 	// 创建socket
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -70,19 +73,17 @@ static void udp_client_task(void *pvParameters)
 
 	// 设置服务器(IPV4)
 	struct sockaddr_in server_config;
-	server_config.sin_addr.s_addr = inet_addr(UDP_SREVER_ADDR);
+	server_config.sin_addr.s_addr = htonl(INADDR_ANY);
 	server_config.sin_family = AF_INET;
 	server_config.sin_port = htons(UDP_SREVER_PORT); // 宏htons 用于将主机的无符号短整型数据转换成网络字节顺序(小端转大端)
-
-
-	// 发送数据
-	const char *data = "Hello World!";
-	int err = sendto(sock, data, strlen(data), 0, (struct sockaddr *)&server_config, sizeof(server_config));
+	
+	// 绑定端口
+	int err = bind(sock, (struct sockaddr *)&server_config, sizeof(server_config));
 	if (err < 0)
 	{
-		ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-		close(sock);
+		ESP_LOGE(TAG, "Socket unable to bind: errno %d", errno);
 	}
+	ESP_LOGI(TAG, "Socket bound, port %d", UDP_SREVER_PORT);
 
 	char rx_buffer[1024];
 	// 接收数据,并发回
@@ -104,6 +105,14 @@ static void udp_client_task(void *pvParameters)
 		{
 			// 打印接收到的数据
 			ESP_LOGI(TAG, "Received %d bytes: %s", len, rx_buffer);
+			// 发送数据
+			int err = sendto(sock, rx_buffer, len, 0, (struct sockaddr *)&source_addr, sizeof(source_addr));
+			if (err < 0)
+			{
+				ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+				break;
+			}
+			ESP_LOGI(TAG, "Send success");
 		}
 	}
 	// 关闭socket
@@ -172,5 +181,5 @@ void app_main(void)
 	wifi_sta_init();
 
 	// 创建TCP客户端任务
-	xTaskCreate(udp_client_task, "udp_client_task", 4096, NULL, 5, NULL);
+	xTaskCreate(udp_server_task, "udp_server_task", 4096, NULL, 5, NULL);
 }
