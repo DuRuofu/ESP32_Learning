@@ -196,5 +196,5 @@ void app_main(void)
 	wifi_sta_init();
 
 	// 创建HTTP客户端任务
-	xTaskCreate(http_client_task, "http_client_task", 4096, NULL, 5, NULL);
+	xTaskCreate(http_client_task, "http_client_task", 1024*8, NULL, 5, NULL);
 }
