@@ -10,6 +10,7 @@
 		"led_blink.h": "c",
 		"esp_wifi.h": "c",
 		"esp_wifi_types.h": "c",
-		"esp_event.h": "c"
+		"esp_event.h": "c",
+		"esp_http_server.h": "c"
 	}
 }
