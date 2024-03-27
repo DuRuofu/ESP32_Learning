@@ -73,13 +73,14 @@ static SemaphoreHandle_t lvgl_mux = NULL;
 #define EXAMPLE_PIN_NUM_TOUCH_SCL         (GPIO_NUM_18)
 #define EXAMPLE_PIN_NUM_TOUCH_SDA         (GPIO_NUM_8)
 #define EXAMPLE_PIN_NUM_TOUCH_RST         (GPIO_NUM_7)
-#define EXAMPLE_PIN_NUM_TOUCH_INT         (GPIO_NUM_6)
+#define EXAMPLE_PIN_NUM_TOUCH_INT         (GPIO_NUM_17)
+
 esp_lcd_touch_handle_t tp = NULL;
 
 
 // LCD分辨率
-#define EXAMPLE_LCD_H_RES              412
-#define EXAMPLE_LCD_V_RES              412
+#define EXAMPLE_LCD_H_RES              356
+#define EXAMPLE_LCD_V_RES              400
 
 // LVGLtask配置
 #define EXAMPLE_LVGL_TICK_PERIOD_MS    2

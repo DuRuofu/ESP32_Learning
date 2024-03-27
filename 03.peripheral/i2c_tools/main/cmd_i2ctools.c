@@ -35,8 +35,8 @@ static gpio_num_t i2c_gpio_scl = 2;
 static gpio_num_t i2c_gpio_sda = 5;
 static gpio_num_t i2c_gpio_scl = 6;
 #else
-static gpio_num_t i2c_gpio_sda = 18;
-static gpio_num_t i2c_gpio_scl = 19;
+static gpio_num_t i2c_gpio_sda = 8;
+    static gpio_num_t i2c_gpio_scl = 18;
 #endif
 
 static uint32_t i2c_frequency = 100000;
