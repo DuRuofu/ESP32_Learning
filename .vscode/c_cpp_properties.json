@@ -10,7 +10,7 @@
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-x64",
-            "compileCommands": "/home/duruofu/桌面/ESP32_Learning/05.wifi/websocket/server/build/compile_commands.json"
+            "compileCommands": "/home/duruofu/桌面/ESP32_Learning/04.storage/sdmmc/build/compile_commands.json"
         }
     ],
     "version": 4

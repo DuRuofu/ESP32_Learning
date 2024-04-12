@@ -9,6 +9,7 @@
 
 #define EXAMPLE_MAX_CHAR_SIZE 64
 
+
 static const char *TAG = "example";
 
 #define MOUNT_POINT "/sdcard"
@@ -61,13 +62,15 @@ void app_main(void)
 	// If format_if_mount_failed is set to true, SD card will be partitioned and
 	// formatted in case when mounting fails.
 	esp_vfs_fat_sdmmc_mount_config_t mount_config = {
+		// 此选项用于开关SD卡挂载失败后是否格式化
 #ifdef CONFIG_EXAMPLE_FORMAT_IF_MOUNT_FAILED
 			.format_if_mount_failed = true,
 #else
 			.format_if_mount_failed = false,
 #endif // EXAMPLE_FORMAT_IF_MOUNT_FAILED
-			.max_files = 5,
+			.max_files = 5, 
 			.allocation_unit_size = 16 * 1024};
+
 	sdmmc_card_t *card;
 	const char mount_point[] = MOUNT_POINT;
 	ESP_LOGI(TAG, "Initializing SD card");
@@ -95,18 +98,21 @@ void app_main(void)
 	slot_config.width = 1;
 #endif
 
+
+	// 使用ESP32的话,下面部分无用,SD卡对应的接口是唯一的,无法自定义
+	// 可以参考:https://github.com/espressif/esp-idf/tree/master/examples/storage/sd_card/sdmmc#pin-assignments-for-esp32-s3
 	// On chips where the GPIOs used for SD card can be configured, set them in
 	// the slot_config structure:
-#ifdef CONFIG_SOC_SDMMC_USE_GPIO_MATRIX
-	slot_config.clk = CONFIG_EXAMPLE_PIN_CLK;
-	slot_config.cmd = CONFIG_EXAMPLE_PIN_CMD;
-	slot_config.d0 = CONFIG_EXAMPLE_PIN_D0;
-#ifdef CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_4
-	slot_config.d1 = CONFIG_EXAMPLE_PIN_D1;
-	slot_config.d2 = CONFIG_EXAMPLE_PIN_D2;
-	slot_config.d3 = CONFIG_EXAMPLE_PIN_D3;
-#endif // CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_4
-#endif // CONFIG_SOC_SDMMC_USE_GPIO_MATRIX
+	#ifdef CONFIG_SOC_SDMMC_USE_GPIO_MATRIX
+		slot_config.clk = CONFIG_EXAMPLE_PIN_CLK;
+		slot_config.cmd = CONFIG_EXAMPLE_PIN_CMD;
+		slot_config.d0 = CONFIG_EXAMPLE_PIN_D0;
+	#ifdef CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_4
+		slot_config.d1 = CONFIG_EXAMPLE_PIN_D1;
+		slot_config.d2 = CONFIG_EXAMPLE_PIN_D2;
+		slot_config.d3 = CONFIG_EXAMPLE_PIN_D3;
+	#endif // CONFIG_EXAMPLE_SDMMC_BUS_WIDTH_4
+	#endif // CONFIG_SOC_SDMMC_USE_GPIO_MATRIX
 
 	// Enable internal pullups on enabled pins. The internal pullups
 	// are insufficient however, please make sure 10k external pullups are
