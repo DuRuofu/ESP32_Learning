@@ -1,0 +1,27 @@
+menu "点灯配置"
+    choice BLINK_LED
+        prompt "LED模式"
+        default BLINK_LED_GPIO
+
+        config BLINK_LED_GPIO
+            bool "GPIO"
+        config BLINK_LED_RMT
+            bool "RMT - Addressable LED"
+    endchoice
+
+    config BLINK_GPIO
+        int "LED引脚"
+        default 2
+        help
+            This is an int BLINK_GPIO.
+	
+    config BLINK_PERIOD
+        int "LED周期"
+        default 1000
+        help
+            This is a int BLINK_GPIO.
+
+
+endmenu
+
+
